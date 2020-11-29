@@ -1,0 +1,6 @@
+.contents.row
+  - @items.each do |item|
+    .content_post{:style => "background-image: url(#{item.image});"}
+      %p= item.memo
+      %span.name
+        =item.name
