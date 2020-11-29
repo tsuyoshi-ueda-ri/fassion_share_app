@@ -1,0 +1,49 @@
+header.header {
+  padding: 10px;
+  border-bottom: 1px solid #D8D8D8;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 62px;
+  .header__bar.row {
+    position: relative;
+    h1.grid-6 {
+      font-size: 20px;
+      line-height: 41px;
+      float: left;
+      a {
+        display: block;
+      }
+    }
+    .grid-6 {
+      float: right;
+      text-align: right;
+      a.post {
+        width: 120px;
+        display: inline left;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 660px;
+}
+
+.row .grid-6 {
+  width: 48.2%;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
