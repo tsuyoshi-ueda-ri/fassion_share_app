@@ -2,8 +2,11 @@
   - @items.each do |item|
     .content_post{:style => "background-image: url(#{item.image});"}
       .more
-        %span= image_tag 'arrow_top.png'
+        %span
+          = image_tag 'arrow_top.png'
         %ul.more_list
+          %li
+            =link_to  '編集', edit_item_path(item.id), method: :get
           %li
             = link_to '削除', item_path(item.id), method: :delete
       %p= item.memo
