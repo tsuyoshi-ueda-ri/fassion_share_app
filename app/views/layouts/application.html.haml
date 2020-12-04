@@ -20,8 +20,6 @@
           .grid-6
             = link_to "ログイン", new_user_session_path, class: "post"
             = link_to "新規登録", new_user_registration_path, class: "post"
-        .user_nav.grid-6
-          %a.post{:href => "/items/new"} 投稿する
     = yield
     %footer
       %p
