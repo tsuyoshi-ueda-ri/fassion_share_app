@@ -6,6 +6,8 @@
           = image_tag 'arrow_top.png'
         %ul.more_list
           %li
+            =link_to '詳細', item_path(item.id), method: :get
+          %li
             =link_to  '編集', edit_item_path(item.id), method: :get
           %li
             = link_to '削除', item_path(item.id), method: :delete
