@@ -1,0 +1,8 @@
+.contents.row
+  .container
+    %h3 編集する
+    = form_with(model: @item, local: true) do |form|
+      = form.text_field :name, placeholder: "Nickname"
+      = form.text_field :image, placeholder: "Image Url"
+      = form.text_area :memo, placeholder: "memo", rows: "10"
+      = form.submit "SEND"
