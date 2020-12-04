@@ -5,9 +5,15 @@
       = devise_error_messages!
 
       .field
+        = f.label :nickname
+        %em (6 characters maximum)
+        %br /
+        = f.text_field :nickname, autofocus: true, maxlength: "6"
+        
+      .field
         =f.label :email
         %br/
-        =f.email_field :email
+        = f.email_field :email
       
       .field
         = f.label :password
