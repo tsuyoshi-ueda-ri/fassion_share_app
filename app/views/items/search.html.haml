@@ -3,5 +3,4 @@
   = form.submit "検索", class: "search-btn"
 .contents.row
   - @items.each do |item|
-    = render partial: "item", locals: { item: item }
-    
+    = render partial: "item", locals: {item: item}
