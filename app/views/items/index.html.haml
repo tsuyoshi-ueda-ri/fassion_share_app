@@ -14,3 +14,6 @@
       %p= item.memo
       %span.name
         =item.name
+        %a{:href =>""}
+          %span 投稿者
+          = item.user.nickname
