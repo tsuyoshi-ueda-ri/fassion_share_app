@@ -1,19 +1,4 @@
 .contents.row
   - @items.each do |item|
-    .content_post{:style => "background-image: url(#{item.image});"}
-      .more
-        %span
-          = image_tag 'arrow_top.png'
-        %ul.more_list
-          %li
-            =link_to '詳細', item_path(item.id), method: :get
-          - if user_signed_in? && current_user.id == item.user_id
-            %li
-              =link_to  '編集', edit_item_path(item.id), method: :get
-            %li
-              = link_to '削除', item_path(item.id), method: :delete
-      %p= item.memo
-      %span.name
-        %a{:href =>"/users/#{item.user.id}"}
-          %span 投稿者
-          = item.user.nickname
+    = render partial: "item", locals: { item: item }
+    
