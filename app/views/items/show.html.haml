@@ -1,6 +1,6 @@
 .contents.row
   .content_post{ :style => "background_image: url(#{@item.image});"}
-    - if user_signed_in? && current_user.id == @tweet.user_id
+    - if user_signed_in? && current_user.id == @item.user_id
       .more
         %span= image_tag'arrow_top.png'
         %ul.more_list
@@ -10,8 +10,8 @@
             =link_to '削除',  item_path(@item.id), method: :delete
     %p= @item.memo
     %a{:href =>"/users/#{@item.user.id}"}
-          %span 投稿者
-          = @item.user.nickname
+      %span 投稿者
+      = @item.user.nickname
   .container
     - if user_signed_in?
       = form_with(model: [@item, @comment], local: true) do |form|
@@ -20,3 +20,11 @@
     - else
       %strong
         %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .comments
+      %h4<コメント一覧>
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            = comment.text
