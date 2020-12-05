@@ -1,12 +1,13 @@
 .contents.row
   .content_post{ :style => "background_image: url(#{@item.image});"}
-    .more
-      %span= image_tag'arrow_top.png'
-      %ul.more_list
-        %li
-          =link_to '編集',  edit_item_path(@item.id), method: :get
-        %li
-          =link_to '削除',  item_path(@item.id), method: :delete
+    - if user_signed_in? && current_user.id == @tweet.user_id
+      .more
+        %span= image_tag'arrow_top.png'
+        %ul.more_list
+          %li
+            =link_to '編集',  edit_item_path(@item.id), method: :get
+          %li
+            =link_to '削除',  item_path(@item.id), method: :delete
     %p= @item.memo
     %a{:href =>"/users/#{@item.user.id}"}
           %span 投稿者
