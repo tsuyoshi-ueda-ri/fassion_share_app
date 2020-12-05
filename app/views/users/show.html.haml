@@ -1,0 +1,7 @@
+.contents.row
+  %p
+  = @nickname
+  さんの投稿一覧
+  - @items.each do |item|
+    .content_post{ :style => "background-image: url(#{item.image});"}
+      %p= item.memo
