@@ -1,4 +1,10 @@
-# README
+# FASSHION_SHARE_APP DB設計
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|memo|varchar||
+|image|text||
+|user_id|integer|null: false, foreign_key: true|
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
